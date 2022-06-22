@@ -1,4 +1,5 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {screens} from '../utilities/Constants';
@@ -9,6 +10,7 @@ const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
   return (
     <NavigationContainer>
+      <StatusBar barStyle={'light-content'} />
       <Stack.Navigator
         screenOptions={{
           headerShown: false,

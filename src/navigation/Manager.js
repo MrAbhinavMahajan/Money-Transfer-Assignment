@@ -1,4 +1,4 @@
-import {screens} from '../utilities/Constants';
+import {screens,colors} from '../utilities/Constants';
 
 // Screens:-
 import SplashScreen from './screens/splash/Splash';
@@ -35,10 +35,10 @@ const routeDetails = key => {
         component: MainScreen,
         options: {
           title: screens.MainScreen,
-          headerBackVisible: true,
-          headerBackTitleVisible: true,
+          headerBackVisible: false,
+          headerBackTitleVisible: false,
           headerTitleAlign: 'center',
-          headerShown: true,
+          headerShown: false,
           orientation: 'portrait',
         },
       };
@@ -48,11 +48,18 @@ const routeDetails = key => {
         component: RequestScreen,
         options: {
           title: screens.RequestScreen,
-          headerBackVisible: false,
+          headerBackVisible: true,
           headerBackTitleVisible: true,
           headerTitleAlign: 'center',
           headerShown: true,
           orientation: 'portrait',
+          headerTintColor: '#FFF',
+          headerStyle: {
+            backgroundColor: colors.darkBlue,
+            elevation: 0,
+						shadowOpacity: 0,
+          },
+          headerTitleStyle:{color:colors.white}
         },
       };
     case screens.SearchScreen:
@@ -61,11 +68,18 @@ const routeDetails = key => {
         component: SearchScreen,
         options: {
           title: screens.SearchScreen,
-          headerBackVisible: false,
+          headerBackVisible: true,
           headerBackTitleVisible: true,
           headerTitleAlign: 'center',
           headerShown: true,
           orientation: 'portrait',
+          headerTintColor: '#FFF',
+          headerStyle: {
+            backgroundColor: colors.darkBlue,
+            elevation: 0,
+						shadowOpacity: 0,
+          },
+          headerTitleStyle:{color:colors.white}
         },
       };
   }
