@@ -1,6 +1,6 @@
 export const people = [
   {
-    name: 'Ravein Sharma',
+    name: 'Ravin Sharma',
     profileURL: '',
     requestStatus: '',
     balance: '',
@@ -9,7 +9,7 @@ export const people = [
     contactNumber: '',
   },
   {
-    name: 'Nidhi Gupta',
+    name: 'Nidhi Goyal',
     profileURL: '',
     requestStatus: '',
     balance: '',
@@ -99,7 +99,7 @@ export const people = [
     contactNumber: '',
   },
   {
-    name: 'Eshan Mahajan',
+    name: 'Eeshan Mahajan',
     profileURL: '',
     requestStatus: '',
     balance: '',
@@ -114,4 +114,11 @@ export const screens = {
   MainScreen: 'MainScreen',
   RequestScreen: 'RequestScreen',
   SearchScreen: 'SearchScreen',
+};
+
+export const colors = {
+  white: '#FFFFFF',
+  blue: '#17288E',
+  yellow: '#FFB129',
+  lightYellow: '#FDD590',
 };

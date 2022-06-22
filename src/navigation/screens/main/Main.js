@@ -1,12 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import {View, Text, SafeAreaView} from 'react-native';
+import {styles} from './Stylesheet';
 
 const Main = () => {
   return (
-    <View>
-      <Text>Main</Text>
-    </View>
-  )
-}
+    <SafeAreaView style={styles.container} forceInset={{top: 'always'}}>
+      <View>
+        <Text>Main</Text>
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default Main
+export default Main;

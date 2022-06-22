@@ -35,7 +35,7 @@ const routeDetails = key => {
         component: MainScreen,
         options: {
           title: screens.MainScreen,
-          headerBackVisible: false,
+          headerBackVisible: true,
           headerBackTitleVisible: true,
           headerTitleAlign: 'center',
           headerShown: true,

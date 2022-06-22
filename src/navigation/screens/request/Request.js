@@ -1,12 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import {styles} from './Stylesheet';
 
 const Request = () => {
   return (
-    <View>
-      <Text>Request</Text>
-    </View>
-  )
-}
+    <SafeAreaView style={styles.container} forceInset={{top: 'always'}}>
+      <View>
+        <Text>Request</Text>
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default Request
+export default Request;
