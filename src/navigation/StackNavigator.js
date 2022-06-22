@@ -13,7 +13,7 @@ const StackNavigator = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={stackCollection.LaunchStack}>
+        initialRouteName={screens.SplashScreen}>
         <Stack.Screen
           name={screens.SplashScreen}
           component={Manager.routeComponent(screens.SplashScreen)}

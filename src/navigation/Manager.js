@@ -6,7 +6,7 @@ import MainScreen from './screens/main/Main';
 import RequestScreen from './screens/request/Request';
 import SearchScreen from './screens/search/Search';
 
-export const routeComponent = key => routeDetails(`${key}`).component;
+export const routeComponent = key => routeDetails(key).component;
 
 export const routeOptions = key => routeDetails(`${key}`).options;
 
