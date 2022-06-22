@@ -1,4 +1,4 @@
-import {screens,colors} from '../utilities/Constants';
+import {screens, colors} from '../utilities/Constants';
 
 // Screens:-
 import SplashScreen from './screens/splash/Splash';
@@ -47,7 +47,7 @@ const routeDetails = key => {
         name,
         component: RequestScreen,
         options: {
-          title: screens.RequestScreen,
+          title: 'New Request',
           headerBackVisible: true,
           headerBackTitleVisible: true,
           headerTitleAlign: 'center',
@@ -57,9 +57,9 @@ const routeDetails = key => {
           headerStyle: {
             backgroundColor: colors.darkBlue,
             elevation: 0,
-						shadowOpacity: 0,
+            shadowOpacity: 0,
           },
-          headerTitleStyle:{color:colors.white}
+          headerTitleStyle: {color: colors.white},
         },
       };
     case screens.SearchScreen:
@@ -77,9 +77,9 @@ const routeDetails = key => {
           headerStyle: {
             backgroundColor: colors.darkBlue,
             elevation: 0,
-						shadowOpacity: 0,
+            shadowOpacity: 0,
           },
-          headerTitleStyle:{color:colors.white}
+          headerTitleStyle: {color: colors.white},
         },
       };
   }

@@ -81,6 +81,9 @@ export const people = [
   },
 ];
 
+export const profileURL =
+  'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg';
+
 export const screens = {
   SplashScreen: 'SplashScreen',
   MainScreen: 'MainScreen',
@@ -89,6 +92,7 @@ export const screens = {
 };
 
 export const colors = {
+  black: '#000',
   white: '#FFFFFF',
   offWhite: '#E7E4E4',
   lightOffWhite: '#EEEEEE',
@@ -105,5 +109,6 @@ export const colors = {
   lightYellow: '#FDD590',
   lightGreen: '#1DC7AC',
   lightRed: '#FE4A54',
+  pink: '#FF2E63',
   semiDarkYellow: '#FAAD39',
 };

@@ -2,7 +2,7 @@ import {Dimensions, StyleSheet} from 'react-native';
 import {colors} from '../../../utilities/Constants';
 
 export const styles = StyleSheet.create({
-  shadow: (shadowColor = colors.BLACK) => ({
+  shadow: (shadowColor = colors.black) => ({
     shadowColor,
     shadowOffset: {
       width: 0,
