@@ -10,6 +10,11 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.darkBlue,
   },
 
+  contentWrapper: {
+    flex: 1,
+    paddingBottom: '40%',
+  },
+
   bottomSheetWrapper: (height = '40%') => ({
     position: 'absolute',
     zIndex: 2,
@@ -43,16 +48,17 @@ export const styles = StyleSheet.create({
     alignSelf: shouldAlignCenter ? 'center' : 'auto',
   }),
 
-  contentWrapper: {
+  bottomSheetContentWrapper: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
-  avatarWrapper: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  avatarWrapper: (marginX, marginY) => ({
+    position: 'absolute',
+    marginTop: marginY,
+    marginLeft: marginX,
+  }),
 
   circle: {
     borderRadius: 1000,
@@ -75,6 +81,8 @@ export const styles = StyleSheet.create({
     fontSize: showSmaller ? 10 : 20,
     fontWeight: '600',
     color: isActive ? colors.green : colors.white,
+    minWidth: 100,
+    alignSelf: 'center',
   }),
 
   numberLabel: {
@@ -99,4 +107,16 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.white,
   },
+
+  circularField: (zIndex = 1, height = 130) => ({
+    height: height + 100,
+    aspectRatio: 1,
+    borderRadius: 1000,
+    marginTop: (Dimensions.get('screen').width - (height + 100)) / 2 + 50,
+    borderWidth: 2,
+    borderColor: colors.mediumDarkBlue,
+    position: 'absolute',
+    alignSelf: 'center',
+    zIndex,
+  }),
 });

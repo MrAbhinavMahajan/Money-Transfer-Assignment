@@ -1,6 +1,6 @@
 export const people = [
   {
-    name: 'Ravin Sharma',
+    name: 'Ravin',
     profileURL:
       'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
     requestStatus: 'Received',
@@ -10,7 +10,7 @@ export const people = [
     contactNumber: '32548977022',
   },
   {
-    name: 'Nidhi Goyal',
+    name: 'Nidhi',
     profileURL:
       'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
     requestStatus: 'Failed',
@@ -20,7 +20,7 @@ export const people = [
     contactNumber: '32548977022',
   },
   {
-    name: 'Ravin Sharma',
+    name: 'Preeti',
     profileURL:
       'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
     requestStatus: 'Sent',
@@ -30,7 +30,7 @@ export const people = [
     contactNumber: '32548977022',
   },
   {
-    name: 'Nidhi Goyal',
+    name: 'Ajay',
     profileURL:
       'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
     requestStatus: 'Failed',
@@ -40,7 +40,7 @@ export const people = [
     contactNumber: '32548977022',
   },
   {
-    name: 'Ravin Sharma',
+    name: 'Paras',
     profileURL:
       'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
     requestStatus: 'Received',
@@ -50,7 +50,7 @@ export const people = [
     contactNumber: '32548977022',
   },
   {
-    name: 'Nidhi Goyal',
+    name: 'Sudhanshu',
     profileURL:
       'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
     requestStatus: 'Sent',
@@ -60,7 +60,7 @@ export const people = [
     contactNumber: '32548977022',
   },
   {
-    name: 'Ravin Sharma',
+    name: 'Gattu',
     profileURL:
       'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
     requestStatus: 'Sent',
@@ -70,7 +70,67 @@ export const people = [
     contactNumber: '32548977022',
   },
   {
-    name: 'Nidhi Goyal',
+    name: 'Ankush',
+    profileURL:
+      'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
+    requestStatus: 'Failed',
+    balance: '₦ 55000',
+    currency: '₦',
+    countryCode: '+31',
+    contactNumber: '32548977022',
+  },
+  {
+    name: 'Vaibhav',
+    profileURL:
+      'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
+    requestStatus: 'Sent',
+    balance: '₦ 55000',
+    currency: '₦',
+    countryCode: '+31',
+    contactNumber: '32548977022',
+  },
+  {
+    name: 'Avantika',
+    profileURL:
+      'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
+    requestStatus: 'Sent',
+    balance: '₦ 4520',
+    currency: '₦',
+    countryCode: '+31',
+    contactNumber: '32548977022',
+  },
+  {
+    name: 'Rahul',
+    profileURL:
+      'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
+    requestStatus: 'Failed',
+    balance: '₦ 55000',
+    currency: '₦',
+    countryCode: '+31',
+    contactNumber: '32548977022',
+  },
+  {
+    name: 'Amit',
+    profileURL:
+      'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
+    requestStatus: 'Sent',
+    balance: '₦ 55000',
+    currency: '₦',
+    countryCode: '+31',
+    contactNumber: '32548977022',
+  },
+  {
+    name: 'Amandeep',
+    profileURL:
+      'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
+    requestStatus: 'Sent',
+    balance: '₦ 4520',
+    currency: '₦',
+    countryCode: '+31',
+    contactNumber: '32548977022',
+  },
+  {
+    name: 'Akshay',
     profileURL:
       'https://media-exp2.licdn.com/dms/image/C4D03AQGj8Fd2reFGBg/profile-displayphoto-shrink_400_400/0/1654448821759?e=1661385600&v=beta&t=dAG7ErkeOGjtiOvCtYEqyxnbGoEFYFjvtbDTW-KKqwg',
     requestStatus: 'Failed',

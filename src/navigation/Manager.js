@@ -1,10 +1,14 @@
+import React from 'react';
+import {TextInput} from 'react-native';
 import {screens, colors} from '../utilities/Constants';
+import {CommonActions} from '@react-navigation/native';
 
 // Screens:-
 import SplashScreen from './screens/splash/Splash';
 import MainScreen from './screens/main/Main';
 import RequestScreen from './screens/request/Request';
 import SearchScreen from './screens/search/Search';
+import {styles} from './Stylesheet';
 
 export const routeComponent = key => routeDetails(key).component;
 
@@ -42,6 +46,7 @@ const routeDetails = key => {
           orientation: 'portrait',
         },
       };
+
     case screens.RequestScreen:
       return {
         name,
@@ -63,12 +68,22 @@ const routeDetails = key => {
           headerTitleStyle: {color: colors.white},
         },
       };
+
     case screens.SearchScreen:
       return {
         name,
         component: SearchScreen,
-        options: {
-          title: screens.SearchScreen,
+        options: ({navigation, route}) => ({
+          headerTitle: props => (
+            <TextInput
+              placeholder="Search"
+              placeholderTextColor={colors.lightOffWhite}
+              style={styles.searchTextInput}
+              onChangeText={text => {
+                navigation.dispatch(CommonActions.setParams({searchKey: text}));
+              }}
+            />
+          ),
           headerBackVisible: true,
           headerBackTitleVisible: true,
           headerTitleAlign: 'center',
@@ -81,7 +96,7 @@ const routeDetails = key => {
             shadowOpacity: 0,
           },
           headerTitleStyle: {color: colors.white},
-        },
+        }),
       };
   }
 };
