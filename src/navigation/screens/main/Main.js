@@ -1,25 +1,9 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  Image,
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-} from 'react-native';
+import {SafeAreaView, Image, View, Text, FlatList} from 'react-native';
 import Assets from '../../../utilities/Assets';
 import {colors, screens, people} from '../../../utilities/Constants';
+import {CustomButton, Icon} from '../../../utilities/Extensions';
 import {styles} from './Stylesheet';
-
-const Icon = ({source, styles}) => (
-  <Image source={source} style={[styles, {resizeMode: 'contain'}]} />
-);
-
-const CustomButton = ({label, btn}) => (
-  <TouchableOpacity style={btn.styles} onPress={() => btn.action()}>
-    <Text style={label.styles}>{label.value}</Text>
-  </TouchableOpacity>
-);
 
 const renderPeople = ({item, index}) => {
   let color, icon;

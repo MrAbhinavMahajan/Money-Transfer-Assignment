@@ -1,25 +1,10 @@
 import React from 'react';
-import {
-  Image,
-  ImageBackground,
-  View,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {ImageBackground, View, Text} from 'react-native';
 import Assets from '../../../utilities/Assets';
 
 import {profileURL, screens} from '../../../utilities/Constants';
 import {styles} from './Stylesheet';
-
-const Icon = ({source, styles}) => (
-  <Image source={source} style={[styles, {resizeMode: 'contain'}]} />
-);
-
-const CustomButton = ({label, btn}) => (
-  <TouchableOpacity style={btn.styles} onPress={() => btn.action()}>
-    <Text style={label.styles}>{label.value}</Text>
-  </TouchableOpacity>
-);
+import {CustomButton, Icon} from '../../../utilities/Extensions';
 
 const Request = props => {
   return (

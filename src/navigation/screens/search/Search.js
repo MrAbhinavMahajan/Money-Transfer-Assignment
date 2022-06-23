@@ -1,18 +1,9 @@
 import React from 'react';
-import {View, Image, TouchableOpacity, Text, SafeAreaView} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import Assets from '../../../utilities/Assets';
 import {colors, profileURL, screens} from '../../../utilities/Constants';
 import {styles} from './Stylesheet';
-
-const Icon = ({source, styles}) => (
-  <Image source={source} style={[styles, {resizeMode: 'contain'}]} />
-);
-
-const CustomButton = ({label, btn}) => (
-  <TouchableOpacity style={btn.styles} onPress={() => btn.action()}>
-    <Text style={label.styles}>{label.value}</Text>
-  </TouchableOpacity>
-);
+import {CustomButton, Icon} from '../../../utilities/Extensions';
 
 const BottomSheet = props => (
   <View style={styles.bottomSheetWrapper()}>
