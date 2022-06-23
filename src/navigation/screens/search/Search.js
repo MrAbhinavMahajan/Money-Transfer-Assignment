@@ -1,14 +1,51 @@
 import React from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, Image, TouchableOpacity, Text, SafeAreaView} from 'react-native';
+import Assets from '../../../utilities/Assets';
+import {colors, profileURL, screens} from '../../../utilities/Constants';
 import {styles} from './Stylesheet';
-const Search = () => {
-  return (
-    <SafeAreaView style={styles.container} forceInset={{top: 'always'}}>
-      <View>
-        <Text>Search</Text>
-      </View>
-    </SafeAreaView>
-  );
-};
+
+const Icon = ({source, styles}) => (
+  <Image source={source} style={[styles, {resizeMode: 'contain'}]} />
+);
+
+const CustomButton = ({label, btn}) => (
+  <TouchableOpacity style={btn.styles} onPress={() => btn.action()}>
+    <Text style={label.styles}>{label.value}</Text>
+  </TouchableOpacity>
+);
+
+const BottomSheet = props => (
+  <View style={styles.bottomSheetWrapper()}>
+    <View style={styles.capsule(colors.lightViolet, 64, 6, true)} />
+
+    <View style={styles.contentWrapper}>
+      <Icon source={{uri: profileURL}} styles={styles.profilePic} />
+      <Text style={styles.nameLabel}>Abhinav Mahajan</Text>
+      <Text style={styles.numberLabel}>(+234) 905 1694 275</Text>
+
+      <CustomButton
+        btn={{
+          action: () => {
+            props.navigation.navigate(screens.MainScreen);
+          },
+          styles: styles.continuePressable,
+        }}
+        label={{
+          value: 'Continue',
+          styles: styles.continuePressableLabel,
+        }}
+      />
+    </View>
+  </View>
+);
+
+const Content = props => <View></View>;
+
+const Search = props => (
+  <SafeAreaView style={styles.container} forceInset={{top: 'always'}}>
+    <Content {...props} />
+    <BottomSheet {...props} />
+  </SafeAreaView>
+);
 
 export default Search;

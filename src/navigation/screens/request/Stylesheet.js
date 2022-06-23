@@ -7,7 +7,11 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'nowrap',
-    backgroundColor: colors.darkBlue,
+  },
+
+  bgImg: {
+    width: '100%',
+    height: '100%',
   },
 
   contentWrapper: {
@@ -26,21 +30,22 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: colors.lightOffWhite,
-    padding: 15,
+    paddingTop: 30,
+    paddingBottom: 15,
   },
 
   requestingLabel: {
     fontSize: 14,
     fontWeight: '400',
     color: colors.lightOffWhite,
-    padding: 15,
+    paddingVertical: 15,
   },
 
   balance: {
     fontSize: 38,
     fontWeight: '700',
     color: colors.white,
-    padding: 15,
+    paddingVertical: 15,
   },
 
   contentPresablesWrapper: {

@@ -5,6 +5,7 @@ const received = require('../assets/Received.png');
 const sent = require('../assets/Sent.png');
 const failed = require('../assets/Failed.png');
 const picker = require('../assets/Picker.png');
+const bgMoneyRequest = require('../assets/BgMoneyRequest.png');
 
 export default {
   splash,
@@ -14,4 +15,5 @@ export default {
   sent,
   failed,
   picker,
+  bgMoneyRequest,
 };

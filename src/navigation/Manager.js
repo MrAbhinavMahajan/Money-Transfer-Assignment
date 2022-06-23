@@ -54,6 +54,7 @@ const routeDetails = key => {
           headerShown: true,
           orientation: 'portrait',
           headerTintColor: '#FFF',
+          headerTransparent: true,
           headerStyle: {
             backgroundColor: colors.darkBlue,
             elevation: 0,
