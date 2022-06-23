@@ -49,18 +49,33 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  profilePic: {
-    height: 80,
-    aspectRatio: 1,
-    borderRadius: 1000,
-    marginBottom: 20,
+  avatarWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
-  nameLabel: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: colors.lightOffWhite,
+  circle: {
+    borderRadius: 1000,
   },
+
+  profilePic: (
+    shouldHaveBorder = false,
+    showSmaller = false,
+    isActive = false,
+  ) => ({
+    height: showSmaller ? 40 : 80,
+    aspectRatio: 1,
+    borderRadius: 1000,
+    marginBottom: showSmaller ? 5 : 20,
+    borderWidth: shouldHaveBorder ? 2 : 0,
+    borderColor: isActive ? colors.green : colors.white,
+  }),
+
+  nameLabel: (showSmaller = false, isActive = false) => ({
+    fontSize: showSmaller ? 10 : 20,
+    fontWeight: '600',
+    color: isActive ? colors.green : colors.white,
+  }),
 
   numberLabel: {
     fontSize: 14,

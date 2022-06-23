@@ -24,7 +24,7 @@ const renderPeople = ({item, index}) => {
       icon = Assets.failed;
       break;
   }
-
+ 
   return (
     <View style={styles.bottomSheetCards(index % 2 === 0)}>
       <View style={{flexDirection: 'row'}}>
@@ -144,6 +144,7 @@ const Content = props => (
 );
 
 const Main = props => {
+ 
   return (
     <SafeAreaView style={styles.container} forceInset={{top: 'always'}}>
       <Header {...props} />

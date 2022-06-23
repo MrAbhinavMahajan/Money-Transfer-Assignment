@@ -20,11 +20,11 @@ export const styles = StyleSheet.create({
     marginTop: 130,
   },
 
-  profilePic: {
-    height: Dimensions.get('screen').height / 4,
+  profilePic: (height = '70%') => ({
+    height,
     aspectRatio: 1,
     borderRadius: 1000,
-  },
+  }),
 
   nameLabel: {
     fontSize: 24,
@@ -70,5 +70,14 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     color: sendBtn ? colors.white : colors.semiDarkViolet,
+  }),
+
+  circularField: (height = '100%', backgroundColor = colors.semiDarkBlue) => ({
+    justifyContent: 'center',
+    alignItems: 'center',
+    height,
+    backgroundColor,
+    borderRadius: 1000,
+    aspectRatio: 1,
   }),
 });
