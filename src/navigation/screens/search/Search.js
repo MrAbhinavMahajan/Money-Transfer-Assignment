@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, FlatList, Dimensions, Touchable} from 'react-native';
 import {
   colors,
   people,
@@ -39,7 +39,7 @@ const Content = props => {
 
   const distributeDataInGroups = () => {
     let circleArray = [];
-
+    let i = 0;
     for (i = 0; i < Math.log2(people.length / 2 + 1); i++) {
       circleArray.push(
         people.slice(2 * (Math.pow(2, i) - 1), 2 * (Math.pow(2, i + 1) - 1)),
@@ -55,27 +55,39 @@ const Content = props => {
       searchKey?.length > 2 && item.name.includes(searchKey);
     let shouldShowSmaller = true && !shouldHighlight;
 
-    degree = (circleIndex - 1) * 50 - 30;
-    degreeDifferencePath = 38;
+    let degree = (circleIndex - 1) * 50 - 30;
+    let degreeDifferencePath = 38;
     if (index % 2 == 0 || index == 0) {
       degree = degreeDifferencePath * index + degree;
     } else {
       degree = degreeDifferencePath * (index - 1) + 180 + degree;
     }
-    radius = (circleIndex * 100 + 100) / 2;
-    rad = (Math.PI * degree) / 180;
-    marginX = radius - (shouldShowSmaller ? 23 : 45);
-    marginY = radius - (shouldShowSmaller ? 23 : 45);
+    let radius = (circleIndex * 100 + 100) / 2;
+    let rad = (Math.PI * degree) / 180;
+    let marginX = radius - (shouldShowSmaller ? 23 : 45);
+    let marginY = radius - (shouldShowSmaller ? 23 : 45);
+
     marginX = marginX - radius * Math.cos(rad);
     marginY = marginY - radius * Math.sin(rad);
 
+    if (index >= 1) {
+      marginY = marginY - 40 * index;
+    }
     return (
-      <View style={styles.avatarWrapper(marginX, marginY)}>
+      <View
+        style={[
+          {
+            width: 40,
+            aspectRatio: 1,
+            paddingLeft: marginX,
+            top: marginY,
+          },
+        ]}>
         <Icon
           source={{uri: item.profileURL}}
           styles={[styles.profilePic(true, shouldShowSmaller, shouldHighlight)]}
         />
-        <Text style={styles.nameLabel(shouldShowSmaller, shouldHighlight)}>
+        <Text style={[styles.nameLabel(shouldShowSmaller, shouldHighlight)]}>
           {item.name}
         </Text>
       </View>
@@ -84,20 +96,40 @@ const Content = props => {
 
   const renderCircles = ({item, index}) => {
     let circleIndex = index;
-
+    let top = 50 * (circleIndex + 2) * (circleIndex + 1);
+    top = top - 100 - 50 * (circleIndex + 2);
+    switch (index) {
+      case 0:
+        top = Dimensions.get('screen').width / 2 - 100;
+        break;
+      default:
+        top = -(150 + circleIndex * 100);
+        break;
+    }
     return (
       <View
-        style={styles.circularField(circleIndex + 1, 100 * (circleIndex + 1))}>
-        <FlatList
-          data={item}
-          renderItem={({item, index}) =>
-            renderPeopleOnCircles(item, index, circleIndex + 1)
-          }
-          keyExtractor={(item, circleIndex) =>
-            `Person_${circleIndex.toString()}`
-          }
-          scrollEnabled={false}
-        />
+        style={styles.circularFieldWrapper(
+          circleIndex + 1,
+          100 * (circleIndex + 1),
+          top,
+          circleIndex == peopleGroups.length - 1,
+        )}>
+        <View
+          style={styles.circularField(
+            circleIndex + 1,
+            100 * (circleIndex + 1),
+          )}>
+          <FlatList
+            data={item}
+            renderItem={({item, index}) =>
+              renderPeopleOnCircles(item, index, circleIndex + 1)
+            }
+            keyExtractor={(item, circleIndex) =>
+              `Person_${circleIndex.toString()}`
+            }
+            scrollEnabled={false}
+          />
+        </View>
       </View>
     );
   };
@@ -112,7 +144,8 @@ const Content = props => {
         data={peopleGroups}
         renderItem={renderCircles}
         keyExtractor={(item, index) => `Path_${index.toString()}`}
-        scrollEnabled={false}
+        // scrollEnabled={false}
+        contentContainerStyle={{flex: 1}}
       />
     </View>
   );
@@ -122,7 +155,7 @@ const Search = props => {
   return (
     <View style={styles.container}>
       <Content {...props} />
-      <BottomSheet {...props} />
+      {props?.route?.params?.isFocussed ? null : <BottomSheet {...props} />}
     </View>
   );
 };

@@ -82,7 +82,6 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: isActive ? colors.green : colors.white,
     minWidth: 100,
-    alignSelf: 'center',
   }),
 
   numberLabel: {
@@ -108,14 +107,21 @@ export const styles = StyleSheet.create({
     color: colors.white,
   },
 
-  circularField: (zIndex = 1, height = 130) => ({
+  circularFieldWrapper: (zIndex = 4, height = 130, top = 65) => ({
+    width: height + 100,
+    aspectRatio: 1,
+    zIndex,
+    alignSelf: 'center',
+    marginTop: top,
+    padding: 20,
+  }),
+
+  circularField: (zIndex = 4, height = 130) => ({
     height: height + 100,
     aspectRatio: 1,
-    borderRadius: 1000,
-    marginTop: (Dimensions.get('screen').width - (height + 100)) / 2 + 50,
+    borderRadius: height / 2 + 50,
     borderWidth: 2,
     borderColor: colors.mediumDarkBlue,
-    position: 'absolute',
     alignSelf: 'center',
     zIndex,
   }),

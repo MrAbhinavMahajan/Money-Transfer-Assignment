@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextInput} from 'react-native';
+import {TextInput, View, Image, TouchableOpacity} from 'react-native';
 import {screens, colors} from '../utilities/Constants';
 import {CommonActions} from '@react-navigation/native';
 
@@ -9,6 +9,7 @@ import MainScreen from './screens/main/Main';
 import RequestScreen from './screens/request/Request';
 import SearchScreen from './screens/search/Search';
 import {styles} from './Stylesheet';
+import Assets from '../utilities/Assets';
 
 export const routeComponent = key => routeDetails(key).component;
 
@@ -75,17 +76,41 @@ const routeDetails = key => {
         component: SearchScreen,
         options: ({navigation, route}) => ({
           headerTitle: props => (
-            <TextInput
-              placeholder="Search"
-              placeholderTextColor={colors.lightOffWhite}
-              style={styles.searchTextInput}
-              onChangeText={text => {
-                navigation.dispatch(CommonActions.setParams({searchKey: text}));
-              }}
-            />
+            <View style={styles.searchHeaderWrapper}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.pop();
+                }}
+                style={styles.searchBtnWrapper}>
+                <Image
+                  source={Assets.picker}
+                  style={styles.searchHeaderBackBtn}
+                />
+              </TouchableOpacity>
+              <TextInput
+                placeholder="Search"
+                placeholderTextColor={colors.lightOffWhite}
+                style={styles.searchTextInput}
+                onFocus={() => {
+                  navigation.dispatch(
+                    CommonActions.setParams({isFocussed: true}),
+                  );
+                }}
+                onBlur={() => {
+                  navigation.dispatch(
+                    CommonActions.setParams({isFocussed: false}),
+                  );
+                }}
+                onChangeText={text => {
+                  navigation.dispatch(
+                    CommonActions.setParams({searchKey: text}),
+                  );
+                }}
+              />
+            </View>
           ),
-          headerBackVisible: true,
-          headerBackTitleVisible: true,
+          headerBackVisible: false,
+          headerBackTitleVisible: false,
           headerTitleAlign: 'center',
           headerShown: true,
           orientation: 'portrait',

@@ -1,4 +1,4 @@
-import {Platform, StyleSheet} from 'react-native';
+import {PixelRatio, Platform, StyleSheet} from 'react-native';
 import {colors} from '../utilities/Constants';
 
 export const styles = StyleSheet.create({
@@ -13,13 +13,33 @@ export const styles = StyleSheet.create({
     elevation: 6,
   }),
 
+  searchHeaderWrapper: {
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  searchBtnWrapper: {
+    aspectRatio: 1,
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  searchHeaderBackBtn: {
+    transform: [{rotate: '90deg'}],
+    height: 10,
+  },
+
   searchTextInput: {
-    width: Platform.OS === 'ios' ? '90%' : '80%',
+    width: '80%',
+    marginRight: '10%',
     backgroundColor: colors.semiDarkBlue,
     borderColor: colors.lightGreen,
     borderWidth: 1,
     borderRadius: 10,
-    padding: 10,
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
     color: colors.white,
   },
 });
