@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {colors} from '../utilities/Constants';
 
 export const styles = StyleSheet.create({
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   }),
 
   searchTextInput: {
-    width: '90%',
+    width: Platform.OS === 'ios' ? '90%' : '80%',
     backgroundColor: colors.semiDarkBlue,
     borderColor: colors.lightGreen,
     borderWidth: 1,

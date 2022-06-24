@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {colors} from '../../../utilities/Constants';
 
 export const styles = StyleSheet.create({
@@ -108,7 +108,7 @@ export const styles = StyleSheet.create({
     color: colors.lightBlue,
   },
 
-  bottomSheetWrapper: (height = '65%') => ({
+  bottomSheetWrapper: (height = Platform.OS === 'ios' ? '65%' : '55%') => ({
     position: 'absolute',
     zIndex: 2,
     bottom: 0,

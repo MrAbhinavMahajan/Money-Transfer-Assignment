@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {Dimensions, Platform, StyleSheet} from 'react-native';
 import {colors} from '../../../utilities/Constants';
 
 export const styles = StyleSheet.create({
@@ -29,7 +29,8 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     position: 'absolute',
     zIndex: 2,
-    top: Dimensions.get('screen').height / 2.4,
+    top:
+      Dimensions.get('screen').height / (Platform.OS === 'ios' ? 2.45 : 2.68),
     left: Dimensions.get('screen').width / 2,
   },
 

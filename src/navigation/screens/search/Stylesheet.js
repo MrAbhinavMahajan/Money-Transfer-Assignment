@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     paddingBottom: '40%',
   },
 
-  bottomSheetWrapper: (height = '40%') => ({
+  bottomSheetWrapper: (height = Platform.OS === 'ios' ? '40%' : '45%') => ({
     position: 'absolute',
     zIndex: 2,
     bottom: 0,
@@ -97,7 +97,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.pink,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 150,
+    width: Dimensions.get('screen').width / 2.5,
     aspectRatio: 173 / 60,
     borderRadius: 10,
   },

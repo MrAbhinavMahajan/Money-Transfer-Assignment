@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {Dimensions, PixelRatio, StyleSheet} from 'react-native';
 import {colors} from '../../../utilities/Constants';
 
 export const styles = StyleSheet.create({
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   }),
 
   nameLabel: {
-    fontSize: 24,
+    fontSize: PixelRatio.getPixelSizeForLayoutSize(8),
     fontWeight: '600',
     color: colors.lightOffWhite,
     paddingTop: 30,
@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
   },
 
   balance: {
-    fontSize: 38,
+    fontSize: PixelRatio.getPixelSizeForLayoutSize(12),
     fontWeight: '700',
     color: colors.white,
     paddingVertical: 15,
@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
   contentPresablesWrapper: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: PixelRatio.getPixelSizeForLayoutSize(10),
   },
 
   contentPresables: (sendBtn = false) => ({
@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
     borderColor: sendBtn ? colors.pink : colors.semiDarkViolet,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 180,
+    width: Dimensions.get('screen').width / 2.5,
     aspectRatio: 173 / 60,
     borderRadius: 10,
     marginBottom: 20,
